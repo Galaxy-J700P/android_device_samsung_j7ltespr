@@ -106,8 +106,7 @@ PRODUCT_PACKAGES += \
 # NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/nfc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/nfc/libnfc-nxp.conf \
-    $(LOCAL_PATH)/configs/nfc/nfcee_access.xml:system/etc/nfcee_access.xml
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/nfc/libnfc-nxp.conf
 
 BOARD_NFC_CHIPSET := pn548
 
@@ -115,6 +114,8 @@ PRODUCT_PACKAGES += \
     libpn548_fw \
     nfc_nci.pn54x.default \
     com.android.nfc_extras \
+    nqnfcee_access.xml \
+    nqnfcse_access.xml \
     NfcNci \
     Tag
 

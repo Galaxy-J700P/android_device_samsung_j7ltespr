@@ -153,6 +153,7 @@ TARGET_HW_DISK_ENCRYPTION            := true
 
 # Power HAL
 TARGET_POWERHAL_VARIANT              := qcom
+TARGET_POWERHAL_SET_INTERACTIVE_EXT  := device/samsung/j7ltespr/power/power_ext.c
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true

@@ -201,6 +201,12 @@ PRODUCT_PACKAGES += \
     libqcomfm_jni \
     qcom.fmradio
 
+PRODUCT_PROPERTY_OVERRIDES  += \
+    ro.fm.transmitter=false
+
+PRODUCT_BOOT_JARS += \
+    qcom.fmradio
+
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:system/etc/sec_config

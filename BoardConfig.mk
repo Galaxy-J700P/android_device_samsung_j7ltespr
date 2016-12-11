@@ -135,7 +135,9 @@ BOARD_USES_MMCUTILS                  := true
 TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
 
 # Enable QCOM FM feature
+AUDIO_FEATURE_ENABLED_FM_POWER_OPT   := true
 AUDIO_FEATURE_ENABLED_FM             := true
+BOARD_HAVE_QCOM_FM                   := true
 
 # Audio
 AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE         := true

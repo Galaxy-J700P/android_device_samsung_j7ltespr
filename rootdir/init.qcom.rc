@@ -467,6 +467,10 @@ on post-fs-data
     mkdir /persist/data/sfs 0700 system system
     mkdir /persist/data/tz 0700 system system
 
+    # Create FM dir for patchdownloader
+    mkdir /data/misc/fm 0770 system system
+    chmod 0770 /data/misc/fm
+
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
 
@@ -587,6 +591,10 @@ on post-fs-data
     mkdir /data/system/perfd 0770 root system
     chmod 2770 /data/system/perfd
     mkdir /persist/drm 0770 system system
+
+    # FM
+    chmod 0644 /dev/radio0
+    chown fm_radio fm_radio /dev/radio0
 
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
@@ -838,7 +846,7 @@ service loc_launcher /system/bin/loc_launcher
 
 service fm_dl /system/bin/sh /system/etc/init.qcom.fm.sh
     class late_start
-    user root
+    user system
     group system
     disabled
     oneshot

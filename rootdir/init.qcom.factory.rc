@@ -26,8 +26,6 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.remove_recovery.rc
-
 # Define fastmmi
 service fastmmi /system/bin/mmi
     user root

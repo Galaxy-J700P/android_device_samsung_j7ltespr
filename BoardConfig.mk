@@ -28,6 +28,9 @@ TARGET_USES_NEW_ION_API              := true
 # Media
 TARGET_QCOM_MEDIA_VARIANT             := caf
 
+# Custom RIL class
+BOARD_RIL_CLASS := ../../../device/samsung/j7ltespr/ril/
+
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE        := true
 BOARD_CHARGER_ENABLE_SUSPEND         := true

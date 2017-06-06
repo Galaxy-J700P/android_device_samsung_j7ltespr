@@ -43,6 +43,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml
 
+# ANT+
+PRODUCT_COPY_FILES += \
+    external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:system/etc/permissions/com.dsi.ant.antradio_library.xml
+
+PRODUCT_PACKAGES += \
+   AntHalService \
+   com.dsi.ant.antradio_library \
+   libantradio
 
 # Audio configuration
 PRODUCT_COPY_FILES += \

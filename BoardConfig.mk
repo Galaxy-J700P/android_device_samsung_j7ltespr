@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PATH := device/j7ltespr/j7ltespr
+DEVICE_PATH := device/samsung/j7ltespr
 
 # Inherit from samsung qcom-common
 include device/samsung/qcom-common/BoardConfigCommon.mk
@@ -54,7 +54,7 @@ BOARD_USES_CYANOGEN_HARDWARE    := true
 TARGET_OTA_ASSERT_DEVICE := j7ltespr. SM-J700P, J700P
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
 BOARD_HAVE_BLUETOOTH_QCOM                   := true
 BLUETOOTH_HCI_USE_MCT                       := true
@@ -91,7 +91,7 @@ BOARD_FLASH_BLOCK_SIZE              := 131072
 MALLOC_SVELTE                        := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
 BOARD_HAVE_BLUETOOTH_QCOM                   := true
 BLUETOOTH_HCI_USE_MCT                       := true
@@ -108,7 +108,7 @@ MAX_EGL_CACHE_SIZE                    := 2048*1024
 OVERRIDE_RS_DRIVER                    := libRSDriver.so
 
 # Recovery
-TARGET_RECOVERY_FSTAB                := $(LOCAL_PATH)/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB                := $(DEVICE_PATH)/rootdir/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4           := true
 BOARD_HAS_LARGE_FILESYSTEM           := true
 TARGET_RECOVERY_DENSITY              := hdpi

@@ -3,4 +3,4 @@ allow audioserver qmuxd_socket:dir { add_name remove_name search write };
 allow audioserver qmuxd_socket:sock_file { create setattr write };
 allow audioserver self:socket { create ioctl read };
 allow audioserver rootfs:lnk_file r_file_perms;
-allow audioserver system_file:file execmod;
+#allow audioserver system_file:file execmod;

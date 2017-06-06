@@ -1,3 +1,105 @@
 #
 # system.prop for j7ltespr
 #
+# RIL
+rild.libpath=/system/lib/libsec-ril.so
+rild.libargs=-d /dev/smd0
+ro.telephony.ril_class=J7RIL
+#ro.ril.multi_rat_capable=false
+#persist.radio.flexmap_type=nw_mode
+persist.radio.rat_on=combine
+ril.subscription.types=NV,RUIM
+ro.telephony.default_network=10
+ro.ril.transmitpower=true
+persist.radio.add_power_save=1
+persist.radio.no_wait_for_card=1
+persist.radio.apm_sim_not_pwdn=1
+persist.radio.use_se_table_only=1
+persist.radio.jbims=1
+ro.ril.telephony.mqanelements=6
+ro.telephony.ril.config=simactivation
+
+# Data modules
+ro.use_data_netmgrd=false
+persist.data.netmgrd.qos.enable=false
+
+# Display
+ro.sf.lcd_density=267
+ro.opengles.version=196608
+debug.composition.type=c2d
+debug.sf.gpu_comp_tiling=1
+debug.mdpcomp.idletime=600
+persist.hwc.mdpcomp.enable=true
+persist.hwc.ptor.enable=true
+
+# Media
+mm.enable.smoothstreaming=true
+vidc.enc.narrow.searchrange=1
+media.aac_51_output_enabled=true
+#qcom.hw.aac.encoder=true
+
+# Camera
+persist.camera.tn.disable=1
+persist.camera.pip.support=0
+persist.camera.hal.debug.mask=0
+media.stagefright.legacyencoder=true
+media.stagefright.less-secure=true
+
+# Audio
+tunnel.audio.encode=false
+audio.offload.video=true
+audio.offload.gapless.enabled=true
+av.streaming.offload.enable=true
+audio.offload.buffer.size.kb=64
+audio.offload.pcm.16bit.enable=false
+audio.offload.pcm.24bit.enable=false
+use.voice.path.for.pcm.voip=false
+ro.qc.sdk.audio.fluencetype=none
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+
+# Perf
+ro.vendor.extension_library=/system/vendor/lib/libqti-perfd-client.so
+
+# Misc.
+ro.product_ship=true
+ro.chipname=MSM8929
+ro.warmboot.capability=1
+ro.qualcomm.cabl=0
+debug.sf.hw=1
+debug.egl.hw=1
+
+#system props for time-services
+persist.timed.enable=true
+
+persist.hwc.enable_vds=1
+
+ro.config.max_starting_bg=8
+#dalvik.vm.dex2oat-swap=false
+dalvik.vm.dex2oat-flags=--no-watch-dog
+ro.sys.fw.dex2oat_thread_count=4
+
+# Samsung OEM
+ro.multisim.set_audio_params=true
+ro.telephony.samsung.realcall=true
+
+# GPS
+persist.loc.nlp_name=com.qualcomm.location
+persist.gps.qc_nlp_in_use=1
+ro.gps.agps_provider=1
+
+# Bluetooth
+qcom.bluetooth.soc=smd
+ro.bluetooth.dun=true
+ro.bluetooth.hfp.ver=1.7
+ro.bluetooth.sap=true
+ro.qualcomm.bluetooth.ftp=true
+ro.qualcomm.bluetooth.hfp=true
+ro.qualcomm.bluetooth.hsp=true
+ro.qualcomm.bluetooth.map=true
+ro.qualcomm.bluetooth.nap=true
+ro.qualcomm.bluetooth.opp=true
+ro.qualcomm.bluetooth.pbap=true
+ro.qualcomm.bt.hci_transport=smd
+persist.bt.enableAptXHD=true

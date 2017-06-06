@@ -38,6 +38,12 @@ BOARD_CHARGING_MODE_BOOTING_LPM      := /sys/class/power_supply/battery/batt_lp_
 BACKLIGHT_PATH                       := "/sys/class/leds/lcd-backlight/brightness"
 CHARGING_ENABLED_PATH                := /sys/class/power_supply/battery/batt_lp_charging
 
+# Arch
+TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_CORTEX_A53 := true
+
 # Platform
 TARGET_BOARD_PLATFORM           := msm8916
 TARGET_BOARD_PLATFORM_GPU       := qcom-adreno306

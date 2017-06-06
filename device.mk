@@ -17,6 +17,11 @@
 # call the proprietary setup
 $(call inherit-product, vendor/samsung/j7ltespr/j7ltespr-vendor.mk)
 
+# Audio configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/audio_policy.conf:system/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/audio/audio_effects.conf:system/etc/audio_effects.conf
+
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc \

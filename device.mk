@@ -81,6 +81,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/configs/gps/flp.conf:system/etc/flp.conf
 
+# Power HAL
+PRODUCT_PACKAGES += \
+    power.msm8916
+
 # Media
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
@@ -89,10 +93,30 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
-# Audio configuration
+PRODUCT_PACKAGES += \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
+    libOmxVdec \
+    libOmxVenc \
+    libstagefrighthw
+
+# NFC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/nfc/libnfc-brcm.conf:system/nfc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/nfc/libnfc-nxp.conf
+    $(LOCAL_PATH)/configs/nfc/libnfc-nxp.conf:system/nfc/libnfc-nxp.conf \
+    $(LOCAL_PATH)/configs/nfc/nfcee_access.xml:system/etc/nfcee_access.xml
+
+BOARD_NFC_CHIPSET := pn548
+
+PRODUCT_PACKAGES += \
+    libpn548_fw \
+    nfc_nci.pn54x.default \
+    com.android.nfc_extras \
+    NfcNci \
+    Tag
 
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
@@ -104,6 +128,53 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     lights.msm8916
+
+# Audio
+PRODUCT_PACKAGES += \
+    audiod \
+    audio.a2dp.default \
+    audio.primary.msm8916 \
+    audio.r_submix.default \
+    audio.usb.default \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    tinymix
+
+# Display
+PRODUCT_PACKAGES += \
+    copybit.msm8916 \
+    gralloc.msm8916 \
+    hwcomposer.msm8916 \
+    libtinyxml \
+    memtrack.msm8916
+
+# IPv6 tethering
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes \
+    libebtc
+
+# Filesystem
+PRODUCT_PACKAGES += \
+    e2fsck \
+    make_ext4fs
+
+# Keystore
+PRODUCT_PACKAGES += \
+    keystore.msm8916
+
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8916 \
+    libxml2 \
+    Snap
+
+# FM packages
+PRODUCT_PACKAGES += \
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
 
 # IRSC
 PRODUCT_COPY_FILES += \
@@ -146,14 +217,34 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Misc
+PRODUCT_PACKAGES += \
+    Stk \
+    libstlport \
+    libboringssl-compat
+    
+# GPS HAL
+PRODUCT_PACKAGES += \
+    gps.msm8916
+
 # TWRP
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
+
+# Live Wallpapers
+PRODUCT_PACKAGES += \
+    LiveWallpapers \
+    LiveWallpapersPicker \
+    VisualizationWallpapers \
+    librs_jni
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
 TARGET_BOOTANIMATION_HALF_RES := true
+
+# Common Qualcomm
+$(call inherit-product, device/samsung/qcom-common/qcom-common.mk)
 
 # Display
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)

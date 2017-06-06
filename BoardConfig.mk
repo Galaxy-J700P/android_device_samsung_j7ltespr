@@ -24,5 +24,10 @@ TARGET_KERNEL_CONFIG := lineageos_j7ltespr_defconfig
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
+# Vendor Init
+TARGET_UNIFIED_DEVICE                := true
+TARGET_INIT_VENDOR_LIB               := libinit_j7ltespr
+TARGET_RECOVERY_DEVICE_MODULES       := libinit_j7ltespr
+
 # inherit from the proprietary version
 -include vendor/samsung/j7ltespr/BoardConfigVendor.mk

@@ -18,6 +18,12 @@ DEVICE_PATH := device/j7ltespr/j7ltespr
 # Assert
 TARGET_OTA_ASSERT_DEVICE := j7ltespr. SM-J700P, J700P
 
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_HAVE_BLUETOOTH                        := true
+BOARD_HAVE_BLUETOOTH_QCOM                   := true
+BLUETOOTH_HCI_USE_MCT                       := true
+
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_j7ltespr_defconfig
 

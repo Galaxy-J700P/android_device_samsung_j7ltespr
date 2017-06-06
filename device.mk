@@ -20,6 +20,10 @@ $(call inherit-product, vendor/samsung/j7ltespr/j7ltespr-vendor.mk)
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Doze
+PRODUCT_PACKAGES += \
+    SamsungDoze
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \

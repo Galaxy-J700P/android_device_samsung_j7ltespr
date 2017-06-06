@@ -1,0 +1,12 @@
+allow mediaserver cameraproxy_service:service_manager find;
+allow mediaserver sensorservice_service:service_manager find;
+allow mediaserver sysfs_camera:dir search;
+allow mediaserver sysfs_camera:file { getattr open read };
+allow mediaserver system_file:file execmod; # for libmmjpeg
+allow mediaserver system_server:unix_stream_socket { read write };
+allow mediaserver audio_device:chr_file { ioctl open read write };
+allow mediaserver system_prop:property_service set;
+allow mediacodec rootfs:lnk_file r_file_perms;
+allow mediaserver tee_device:chr_file rw_file_perms;
+allow mediadrmserver rootfs:lnk_file r_file_perms;
+allow mediaserver media_rw_data_file:file write;

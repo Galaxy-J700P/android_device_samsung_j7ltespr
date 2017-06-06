@@ -1,0 +1,5 @@
+allow kernel audio_device:chr_file rw_file_perms;
+allow kernel efs_file:dir search;
+allow kernel block_device:blk_file rw_file_perms;
+allow kernel isolated_app:fd use;
+allow kernel persist_file:dir search;

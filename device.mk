@@ -24,6 +24,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/synaptics_rmi4_i2c.kl:system/usr/keylayout/synaptics_rmi4_i2c.kl \
     $(LOCAL_PATH)/keylayout/Generic.kl:system/usr/keylayout/Generic.kl
 
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msm8916
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 

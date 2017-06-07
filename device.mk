@@ -229,7 +229,24 @@ PRODUCT_PACKAGES += \
     Stk \
     libstlport \
     libboringssl-compat
-    
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.factory.rc \
+    init.qcom.rc \
+    init.qcom.sh \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh \
+    init.target.rc \
+    ueventd.qcom.rc
+
+PRODUCT_PACKAGES += \
+    init.qcom.bt.sh \
+    init.qcom.fm.sh \
+    init.qcom.post_boot.sh \
+    init.sec.boot.sh
+
 # GPS HAL
 PRODUCT_PACKAGES += \
     gps.msm8916

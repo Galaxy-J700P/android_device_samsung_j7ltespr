@@ -233,18 +233,25 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.class.main.sh \
     init.qcom.factory.rc \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.usb.rc \
     init.qcom.usb.sh \
+    init.rilcarrier.rc \
+    init.rilchip.rc \
+    init.rilcommon.rc \
     init.target.rc \
     ueventd.qcom.rc
 
 PRODUCT_PACKAGES += \
     init.qcom.bt.sh \
+    init.qcom.coex.sh \
     init.qcom.fm.sh \
     init.qcom.post_boot.sh \
+    init.qcom.uicc.sh \
+    init.qcom.zram.sh \
     init.sec.boot.sh
 
 # GPS HAL

@@ -781,12 +781,10 @@ on property:ro.data.large_tcp_window_size=true
 # end of wifi
 
 service p2p_supplicant /system/bin/wpa_supplicant \
-   iwlan0Dnl80211c/data/misc/wifi/wpa_supplicant.conf \
-   I/system/etc/wifi/wpa_supplicant_overlay.confO/data/misc/wifi/socketsN \
-   ip2p0Dnl80211c/data/misc/wifi/p2p_supplicant.conf \
-   I/system/etc/wifi/p2p_supplicant_overlay.conf \
-   puse_p2p_group_interface=1puse_multi_chan_concurrent=1 \
-   e/data/misc/wifi/entropy.bing@android:wpa_wlan0
+   -ip2p0 -Dnl80211 -c /data/misc/wifi/p2p_supplicant.conf \
+   -I /system/etc/wifi/p2p_supplicant_overlay.conf \
+   -puse_p2p_group_interface=1 -puse_multi_chan_concurrent=1 \
+   -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
 #   we will start as root and wpa_supplicant will switch to user wifi
 #   after setting up the capabilities required for WEXT
 #   user wifi
@@ -797,10 +795,10 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     oneshot
 
 service wpa_supplicant /system/bin/wpa_supplicant \
-   iwlan0Dnl80211c/data/misc/wifi/wpa_supplicant.conf \
-   I/system/etc/wifi/wpa_supplicant_overlay.conf \
-   O/data/misc/wifi/sockets \
-   e/data/misc/wifi/entropy.bing@android:wpa_wlan0
+   -iwlan0 -Dnl80211 -c /data/misc/wifi/wpa_supplicant.conf \
+   -I/system/etc/wifi/wpa_supplicant_overlay.conf \
+   -O/data/misc/wifi/sockets \
+   -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
     #   we will start as root and wpa_supplicant will switch to user wifi
     #   after setting up the capabilities required for WEXT
     #   user wifi

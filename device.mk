@@ -231,28 +231,17 @@ PRODUCT_PACKAGES += \
     libboringssl-compat
 
 # Ramdisk
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.class.main.sh \
-    init.qcom.factory.rc \
-    init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh \
-    init.rilcarrier.rc \
-    init.rilchip.rc \
-    init.rilcommon.rc \
-    init.target.rc \
-    ueventd.qcom.rc
-
-PRODUCT_PACKAGES += \
-    init.qcom.bt.sh \
-    init.qcom.coex.sh \
-    init.qcom.fm.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.uicc.sh \
-    init.qcom.zram.sh \
-    init.sec.boot.sh
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
+    $(LOCAL_PATH)/rootdir/init.qcom.rc:root/init.qcom.rc \
+    $(LOCAL_PATH)/rootdir/init.qcom.sh:root/init.qcom.sh \
+    $(LOCAL_PATH)/rootdir/init.qcom.usb.rc:root/init.qcom.usb.rc \
+    $(LOCAL_PATH)/rootdir/init.qcom.usb.sh:root/init.qcom.usb.sh \
+    $(LOCAL_PATH)/rootdir/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
+    $(LOCAL_PATH)/rootdir/etc/init.qcom.post_boot.sh:system/etc/init.qcom.post_boot.sh \
+    $(LOCAL_PATH)/rootdir/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
+    $(LOCAL_PATH)/rootdir/etc/init.sec.boot.sh:system/etc/init.sec.boot.sh \
+    $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc
 
 # GPS HAL
 PRODUCT_PACKAGES += \

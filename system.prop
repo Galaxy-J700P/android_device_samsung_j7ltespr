@@ -9,7 +9,6 @@ ro.telephony.ril_class=J7RIL
 #persist.radio.flexmap_type=nw_mode
 persist.radio.rat_on=combine
 ril.subscription.types=NV,RUIM
-ro.telephony.default_network=10
 ro.ril.transmitpower=true
 persist.radio.add_power_save=1
 persist.radio.no_wait_for_card=1
@@ -18,6 +17,8 @@ persist.radio.use_se_table_only=1
 persist.radio.jbims=1
 ro.ril.telephony.mqanelements=6
 ro.telephony.ril.config=simactivation
+persist.radio.tdscdma_present=1
+ro.telephony.default_network=10
 
 # Data modules
 ro.use_data_netmgrd=false

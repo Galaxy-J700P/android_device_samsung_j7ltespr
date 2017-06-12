@@ -74,7 +74,7 @@ BOARD_KERNEL_PAGESIZE              := 2048
 BOARD_KERNEL_SEPARATED_DT          := true
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
 KERNEL_TOOLCHAIN                   := $(ANDROID_BUILD_TOP)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin
-TARGET_KERNEL_SOURCE               := kernel/samsung/msm8929
+TARGET_KERNEL_SOURCE               := kernel/samsung/j7lte
 BOARD_CUSTOM_BOOTIMG_MK            := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_IMAGE_NAME            := zImage
 
@@ -176,4 +176,4 @@ TARGET_INIT_VENDOR_LIB               := libinit_j7ltespr
 TARGET_RECOVERY_DEVICE_MODULES       := libinit_j7ltespr
 
 # inherit from the proprietary version
--include vendor/samsung/j7ltespr/BoardConfigVendor.mk
+-include vendor/samsung/j7ltespr/AndroidBoardVendor.mk

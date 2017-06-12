@@ -125,6 +125,14 @@ TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
 # Enable QCOM FM feature
 AUDIO_FEATURE_ENABLED_FM             := true
 
+# Audio
+AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE         := true
+AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
+BOARD_SUPPORTS_SOUND_TRIGGER               := true
+BOARD_USES_ALSA_AUDIO                      := true
+USE_CUSTOM_AUDIO_POLICY                    := 1
+TARGET_QCOM_AUDIO_VARIANT                  := caf
+
 # Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION            := true
 

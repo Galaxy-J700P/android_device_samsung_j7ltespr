@@ -761,6 +761,12 @@
         <ctl name="ADC1 Volume" value="4" />
     </path>
 
+    <path name="handset-mic">
+        <path name="main-mic" />
+        <ctl name="DEC1 Volume" value="82" />
+        <ctl name="ADC1 Volume" value="4" />
+    </path>
+
     <path name="rec-sub-mic">
         <path name="sub-mic" />
         <ctl name="DEC1 Volume" value="82" />

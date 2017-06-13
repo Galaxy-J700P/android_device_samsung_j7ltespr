@@ -38,6 +38,9 @@ BOARD_CHARGING_MODE_BOOTING_LPM      := /sys/class/power_supply/battery/batt_lp_
 BACKLIGHT_PATH                       := "/sys/class/leds/lcd-backlight/brightness"
 CHARGING_ENABLED_PATH                := /sys/class/power_supply/battery/batt_lp_charging
 
+# Adreno driver
+OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
+
 # Arch
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp

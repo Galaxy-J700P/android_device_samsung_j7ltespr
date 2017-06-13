@@ -154,6 +154,10 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing
 
+# BoringSSL
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # TinyAlsa
 PRODUCT_PACKAGES += \
     tinyalsa \
@@ -168,9 +172,6 @@ PRODUCT_PACKAGES += \
     gralloc.msm8916 \
     hwcomposer.msm8916 \
     memtrack.msm8916 \
-    liboverlay \
-    libqdutils \
-    libqservice \
     libtinyxml
 
 # IPv6 tethering

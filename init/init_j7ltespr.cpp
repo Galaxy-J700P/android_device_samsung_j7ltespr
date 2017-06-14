@@ -1,6 +1,5 @@
 /*
-   Copyright (c) 2016, The Linux Foundation. All rights reserved.
-
+   Copyright (c) 2013, The Linux Foundation. All rights reserved.
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -13,7 +12,6 @@
     * Neither the name of The Linux Foundation nor the names of its
       contributors may be used to endorse or promote products derived
       from this software without specific prior written permission.
-
    THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
@@ -28,14 +26,13 @@
  */
 
 #include <stdlib.h>
-#include <stdio.h>
 
 #include "vendor_init.h"
 #include "property_service.h"
 #include "log.h"
 #include "util.h"
 
-void init_target_properties()
+void vendor_load_properties()
 {
     std::string platform = property_get("ro.board.platform");
     if (platform != ANDROID_TARGET)
@@ -45,7 +42,6 @@ void init_target_properties()
 
     property_set("ro.build.fingerprint", "samsung/j7ltespr/j7ltespr:6.0.1/MMB29M/J700PVPS1AQD1:user/release-keys");
     property_set("ro.build.description", "j7ltespr-user 6.0.1 MMB29M J700PVPS1AQD1 release-keys");
-    
     property_set("ro.product.model", "SM-J700P");
     property_set("ro.product.device", "j7ltespr");
 

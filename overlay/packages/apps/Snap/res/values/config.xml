@@ -5,4 +5,7 @@
 
     <!-- Opens front camera using openLegacy() -->
     <bool name="front_camera_open_legacy">false</bool>
+
+    <!-- Sets default video recording resolutions -->
+    <string name="pref_video_quality_default" translatable="false">1280x720</string>
 </resources>

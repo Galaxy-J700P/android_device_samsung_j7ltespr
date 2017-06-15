@@ -193,7 +193,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     camera.msm8916 \
     libxml2 \
-    Snap
+    Camera2
 
 # FM packages
 PRODUCT_PACKAGES += \

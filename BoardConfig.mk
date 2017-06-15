@@ -119,9 +119,11 @@ MAX_EGL_CACHE_KEY_SIZE                := 12*1024
 MAX_EGL_CACHE_SIZE                    := 2048*1024
 OVERRIDE_RS_DRIVER                    := libRSDriver.so
 
-# Legacy Blobs
+# Camera
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+TARGET_IS_DERP2 := true
+TARGET_PROVIDES_CAMERA_HAL := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB                := $(DEVICE_PATH)/rootdir/fstab.qcom

@@ -88,9 +88,11 @@ PRODUCT_COPY_FILES += \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/configs/gps/izat.conf:system/etc/izat.conf \
-    $(LOCAL_PATH)/configs/gps/flp.conf:system/etc/flp.conf
+    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/gps/sap.conf:system/etc/sap.conf \
+    $(LOCAL_PATH)/gps/flp.conf:system/etc/flp.conf \
+    $(LOCAL_PATH)/gps/izat.conf:system/etc/izat.conf \
+    $(LOCAL_PATH)/gps/quipc.conf:system/etc/quipc.conf
 
 # Power HAL
 PRODUCT_PACKAGES += \
@@ -200,6 +202,10 @@ PRODUCT_PACKAGES += \
     FM2 \
     libqcomfm_jni \
     qcom.fmradio
+
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8916
 
 # IRSC
 PRODUCT_COPY_FILES += \

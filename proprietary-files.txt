@@ -106,11 +106,9 @@ lib/libexifa.so
 lib/libface.so
 lib/libfactoryutil.so
 lib/libgdmcprov.so
-lib/libgps.utils.so
 lib/libjpega.so
-lib/libloc_api_v02.so
-lib/libloc_core.so
-lib/libloc_eng.so
+-lib/libloc_api_v02.so|03860b5a4e72edd96c9acce3886b6d23
+-lib/libloc_ds_api.so|31c3c73f4e449eded83f32eabc561c29
 lib/libmaet.so
 lib/libMcClient.so
 lib/libMcRegistry.so
@@ -181,7 +179,6 @@ lib/libtlc_comm.so
 lib/libTsAf.so
 
 lib/hw/camera.msm8916.so:lib/hw/camera.vendor.msm8916.so
-lib/hw/gps.default.so
 lib/hw/sensors.msm8916.so
 
 vendor/bin/perfd
@@ -229,14 +226,14 @@ vendor/lib/libdsutils.so
 vendor/lib/libExtendedExtractor.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libFlacSwDec.so
-vendor/lib/libflp.so
-vendor/lib/libgeofence.so
+vendor/lib/libflp.so|8ecc18a88b768e65ade0c2f900aa3699
+vendor/lib/libgeofence.so|862cfcd014939ba68c2418488c00a724
 vendor/lib/libgsl.so|06a985c79c24b850ec4a03e89bd4e208
 -vendor/lib/libHevcSwDecoder.so
 vendor/lib/libhwdaphal.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libidl.so
-vendor/lib/libizat_core.so
+vendor/lib/libizat_core.so|393277601ff816ab2fabe41fea68fca3
 vendor/lib/lib-imsdpl.so
 vendor/lib/lib-imsqimf.so
 vendor/lib/lib-imsrcscm.so
@@ -250,7 +247,7 @@ vendor/lib/lib-imsvt.so
 vendor/lib/lib-imsxml.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
-vendor/lib/liblbs_core.so
+vendor/lib/liblbs_core.so|be81bdae864452bc38544db8184303c6
 vendor/lib/liblistenjni.so
 vendor/lib/libllvm-glnext.so|df95f2de1e3468b8caf8ecb6839a6477
 vendor/lib/libllvm-qcom.so|8c40927b9b56047447c42d0a23081ef1

@@ -82,6 +82,10 @@ TARGET_HW_DISK_ENCRYPTION            := true
 # Fonts
 EXTENDED_FONT_FOOTPRINT              := true
 
+# GPS
+TARGET_NO_RPC := true
+USE_DEVICE_SPECIFIC_GPS := true
+
 # Kernel
 TARGET_KERNEL_CONFIG 		   := lineageos_j7ltespr_defconfig
 TARGET_KERNEL_ARCH                 := arm

@@ -105,9 +105,6 @@ BLUETOOTH_HCI_USE_MCT                       := true
 # Time
 BOARD_USES_QC_TIME_SERVICES := true
 
-# Time
-BOARD_USES_QC_TIME_SERVICES := true
-
 # Display
 TARGET_CONTINUOUS_SPLASH_ENABLED      := true
 TARGET_USES_OVERLAY                   := true

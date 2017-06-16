@@ -510,6 +510,12 @@ on post-fs-data
     chown system root /data/.wifiver.info
     chmod 0666 /data/.wifiver.info
 
+    # For SEC NFC
+    chmod 0770 /data/nfc
+    chown nfc nfc /data/nfc
+    chmod 0770 /data/nfc/param
+    chown nfc nfc /data/nfc/param
+
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
     chown system system /data/connectivity

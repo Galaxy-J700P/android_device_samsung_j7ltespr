@@ -47,9 +47,6 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_CORTEX_A53 := true
 
-# Cpusets
-ENABLE_CPUSETS := true
-
 # Platform
 TARGET_BOARD_PLATFORM           := msm8916
 TARGET_BOARD_PLATFORM_GPU       := qcom-adreno306

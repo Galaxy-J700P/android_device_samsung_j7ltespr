@@ -35,6 +35,14 @@ persist.hwc.ptor.enable=true
 
 # Media
 mm.enable.smoothstreaming=true
+media.stagefright.enable-player=true
+media.stagefright.enable-http=true
+media.stagefright.enable-aac=true
+media.stagefright.enable-qcp=true
+media.stagefright.enable-fma2dp=true
+media.stagefright.enable-scan=true
+media.msm8939hw=0
+media.msm8929hw=0
 vidc.enc.narrow.searchrange=1
 media.aac_51_output_enabled=true
 #qcom.hw.aac.encoder=true
@@ -67,7 +75,6 @@ ro.vendor.extension_library=/system/vendor/lib/libqti-perfd-client.so
 ro.product_ship=true
 ro.chipname=MSM8929
 ro.warmboot.capability=1
-ro.qualcomm.cabl=0
 debug.sf.hw=1
 debug.egl.hw=1
 
@@ -81,9 +88,8 @@ ro.config.max_starting_bg=8
 dalvik.vm.dex2oat-flags=--no-watch-dog
 ro.sys.fw.dex2oat_thread_count=4
 
-# Samsung OEM
-ro.multisim.set_audio_params=true
-ro.telephony.samsung.realcall=true
+#system props for time-services
+persist.timed.enable=true
 
 # GPS
 persist.loc.nlp_name=com.qualcomm.location

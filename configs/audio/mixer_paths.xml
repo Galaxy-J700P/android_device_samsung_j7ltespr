@@ -761,7 +761,19 @@
         <ctl name="ADC1 Volume" value="4" />
     </path>
 
+    <path name="voice-rec-mic">
+        <path name="main-mic" />
+        <ctl name="DEC1 Volume" value="82" />
+        <ctl name="ADC1 Volume" value="4" />
+    </path>
+
     <path name="handset-mic">
+        <path name="main-mic" />
+        <ctl name="DEC1 Volume" value="82" />
+        <ctl name="ADC1 Volume" value="4" />
+    </path>
+
+    <path name="camcorder-mic">
         <path name="main-mic" />
         <ctl name="DEC1 Volume" value="82" />
         <ctl name="ADC1 Volume" value="4" />
@@ -808,6 +820,12 @@
         <ctl name="DEC1 Volume" value="84" />
         <ctl name="ADC1 Volume" value="4" />
         <ctl name="ADC3 Volume" value="4" />
+    </path>
+
+    <path name="bt-sco-headset-wb">
+    </path>
+
+    <path name="bt-sco-mic-wb">
     </path>
 
     <path name="rec-NS-mic-conversation">
@@ -918,6 +936,12 @@
     <!-- Voice call Scenario -->
     <!-- RX part -->
     <path name="voice-call-handset">
+        <path name="sidetone-handset"/> 
+        <path name="rcv" />
+        <ctl name="RX1 Digital Volume" value="81" />
+    </path>
+
+    <path name="voice-handset">
         <path name="sidetone-handset"/> 
         <path name="rcv" />
         <ctl name="RX1 Digital Volume" value="81" />

@@ -15,30 +15,7 @@
 
 DEVICE_PATH := device/samsung/j7ltespr
 
-# Inherit from samsung qcom-common
-include device/samsung/qcom-common/BoardConfigCommon.mk
-
-# Qcom
-TARGET_PLATFORM_DEVICE_BASE          := /devices/soc.0/
-HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE   := true
-USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
-TARGET_USES_QCOM_BSP                 := true
-TARGET_USES_NEW_ION_API              := true
-
-# Media
-TARGET_QCOM_MEDIA_VARIANT             := caf
-
-# Custom RIL class
-BOARD_RIL_CLASS := ../../../device/samsung/j7ltespr/ril/
-
-# Charger
-BOARD_CHARGER_SHOW_PERCENTAGE        := true
-BOARD_CHARGER_ENABLE_SUSPEND         := true
-BOARD_CHARGING_MODE_BOOTING_LPM      := /sys/class/power_supply/battery/batt_lp_charging
-BACKLIGHT_PATH                       := "/sys/class/leds/lcd-backlight/brightness"
-CHARGING_ENABLED_PATH                := /sys/class/power_supply/battery/batt_lp_charging
-
-# Adreno driver
+# Adreno Driver
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # Arch
@@ -47,32 +24,63 @@ TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_CPU_VARIANT := cortex-a53
 TARGET_CPU_CORTEX_A53 := true
 
-# Dex-preopt
-WITH_DEXPREOPT := true
-
-
-# OTA
-BLOCK_BASED_OTA := true
-
-# Platform
-TARGET_BOARD_PLATFORM           := msm8916
-TARGET_BOARD_PLATFORM_GPU       := qcom-adreno306
-TARGET_BOOTLOADER_BOARD_NAME    := MSM8916
-BOARD_USES_CYANOGEN_HARDWARE    := true
-
-# Assert
+# Asserts
 TARGET_OTA_ASSERT_DEVICE := j7ltespr, SM-J700P, J700P
 
-# NFC
-BOARD_NFC_CHIPSET := pn548
-BOARD_NFC_DEVICE := "/dev/pn547"
-BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
+# Audio
+AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE         := true
+AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
+BOARD_SUPPORTS_SOUND_TRIGGER               := true
+BOARD_USES_ALSA_AUDIO                      := true
+USE_CUSTOM_AUDIO_POLICY                    := 1
+TARGET_QCOM_AUDIO_VARIANT                  := caf
+AUDIO_FEATURE_ENABLED_FM_POWER_OPT         := true
+AUDIO_FEATURE_ENABLED_FM                   := true
+BOARD_HAVE_QCOM_FM                         := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH                        := true
 BOARD_HAVE_BLUETOOTH_QCOM                   := true
 BLUETOOTH_HCI_USE_MCT                       := true
+
+# Camera
+TARGET_HAS_LEGACY_CAMERA_HAL1 := true
+TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
+TARGET_PROVIDES_CAMERA_HAL := true
+USE_DEVICE_SPECIFIC_CAMERA := true
+BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
+TARGET_SPECIFIC_HEADER_PATH := device/samsung/j7ltespr/include
+
+# Charger
+BOARD_CHARGER_SHOW_PERCENTAGE        := true
+BOARD_CHARGER_ENABLE_SUSPEND         := true
+BOARD_CHARGING_MODE_BOOTING_LPM      := /sys/class/power_supply/battery/batt_lp_charging
+BACKLIGHT_PATH                       := "/sys/class/leds/lcd-backlight/brightness"
+CHARGING_ENABLED_PATH                := /sys/class/power_supply/battery/batt_lp_charging
+
+# Custom RIL Class
+BOARD_RIL_CLASS := ../../../device/samsung/j7ltespr/ril/
+
+# Dex-preopt
+WITH_DEXPREOPT := true
+
+# Display
+TARGET_CONTINUOUS_SPLASH_ENABLED      := true
+TARGET_USES_OVERLAY                   := true
+TARGET_HARDWARE_3D                    := false
+TARGET_HAVE_HDMI_OUT                  := false
+USE_OPENGL_RENDERER                   := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS       := 3
+MAX_EGL_CACHE_KEY_SIZE                := 12*1024
+MAX_EGL_CACHE_SIZE                    := 2048*1024
+OVERRIDE_RS_DRIVER                    := libRSDriver.so
+
+# Encryption
+TARGET_HW_DISK_ENCRYPTION            := true
+
+# Fonts
+EXTENDED_FONT_FOOTPRINT              := true
 
 # Kernel
 TARGET_KERNEL_CONFIG 		   := lineageos_j7ltespr_defconfig
@@ -90,6 +98,23 @@ TARGET_KERNEL_SOURCE               := kernel/samsung/j7lte
 BOARD_CUSTOM_BOOTIMG_MK            := hardware/samsung/mkbootimg.mk
 BOARD_KERNEL_IMAGE_NAME            := zImage
 
+# Keylayout
+PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/Generic.kl:system/usr/keylayout/Generic.kl , $(PRODUCT_COPY_FILES))
+
+# Malloc
+MALLOC_SVELTE                        := true
+
+# Media
+TARGET_QCOM_MEDIA_VARIANT            := caf
+
+# NFC
+BOARD_NFC_CHIPSET := pn548
+BOARD_NFC_DEVICE := "/dev/pn547"
+BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
+
+# OTA
+BLOCK_BASED_OTA := true
+
 # Partition sizes
 TARGET_USERIMAGES_USE_EXT4          := true
 TARGET_USERIMAGES_USE_F2FS          := true
@@ -102,37 +127,25 @@ BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_USERDATAIMAGE_PARTITION_SIZE  := 11900268544
 BOARD_FLASH_BLOCK_SIZE              := 131072
 
-# Malloc
-MALLOC_SVELTE                        := true
+# Platform
+TARGET_BOARD_PLATFORM           := msm8916
+TARGET_BOARD_PLATFORM_GPU       := qcom-adreno306
+TARGET_BOOTLOADER_BOARD_NAME    := MSM8916
+BOARD_USES_CYANOGEN_HARDWARE    := true
 
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
-BOARD_HAVE_BLUETOOTH                        := true
-BOARD_HAVE_BLUETOOTH_QCOM                   := true
-BLUETOOTH_HCI_USE_MCT                       := true
+# Power HAL
+TARGET_POWERHAL_VARIANT              := qcom
+TARGET_POWERHAL_SET_INTERACTIVE_EXT  := device/samsung/j7ltespr/power/power_ext.c
 
-# Time
-BOARD_USES_QC_TIME_SERVICES := true
+# Properties
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
-# Display
-TARGET_CONTINUOUS_SPLASH_ENABLED      := true
-TARGET_USES_OVERLAY                   := true
-TARGET_HARDWARE_3D                    := false
-TARGET_HAVE_HDMI_OUT                  := false
-USE_OPENGL_RENDERER                   := true
-NUM_FRAMEBUFFER_SURFACE_BUFFERS       := 3
-MAX_EGL_CACHE_KEY_SIZE                := 12*1024
-MAX_EGL_CACHE_SIZE                    := 2048*1024
-OVERRIDE_RS_DRIVER                    := libRSDriver.so
-
-# Camera
-TARGET_HAS_LEGACY_CAMERA_HAL1 := true
-TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
-TARGET_PROVIDES_CAMERA_HAL := true
-USE_DEVICE_SPECIFIC_CAMERA := true
-BOARD_USE_SAMSUNG_CAMERAFORMAT_NV21 := true
-TARGET_SPECIFIC_HEADER_PATH := device/samsung/j7ltespr/include
-
+# Qcom
+TARGET_PLATFORM_DEVICE_BASE          := /devices/soc.0/
+HAVE_SYNAPTICS_I2C_RMI4_FW_UPGRADE   := true
+USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
+TARGET_USES_QCOM_BSP                 := true
+TARGET_USES_NEW_ION_API              := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB                := $(DEVICE_PATH)/rootdir/fstab.qcom
@@ -145,25 +158,19 @@ BOARD_USE_CUSTOM_RECOVERY_FONT       := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS                  := true
 TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
 
-# Enable QCOM FM feature
-AUDIO_FEATURE_ENABLED_FM_POWER_OPT   := true
-AUDIO_FEATURE_ENABLED_FM             := true
-BOARD_HAVE_QCOM_FM                   := true
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
 
-# Audio
-AUDIO_FEATURE_ENABLED_KPI_OPTIMIZE         := true
-AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
-BOARD_SUPPORTS_SOUND_TRIGGER               := true
-BOARD_USES_ALSA_AUDIO                      := true
-USE_CUSTOM_AUDIO_POLICY                    := 1
-TARGET_QCOM_AUDIO_VARIANT                  := caf
+BOARD_SEPOLICY_DIRS += \
+   device/samsung/j7ltespr/sepolicy
 
-# Enable HW based full disk encryption
-TARGET_HW_DISK_ENCRYPTION            := true
+# Time
+BOARD_USES_QC_TIME_SERVICES := true
 
-# Power HAL
-TARGET_POWERHAL_VARIANT              := qcom
-TARGET_POWERHAL_SET_INTERACTIVE_EXT  := device/samsung/j7ltespr/power/power_ext.c
+# Vendor Init
+TARGET_UNIFIED_DEVICE                := true
+TARGET_INIT_VENDOR_LIB               := libinit_j7ltespr
+TARGET_RECOVERY_DEVICE_MODULES       := libinit_j7ltespr
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true
@@ -189,25 +196,8 @@ WLAN_MODULES:
 
 TARGET_KERNEL_MODULES += WLAN_MODULES
 
-# Properties
-TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
+# Inherit from Samsung Qcom-Common
+include device/samsung/qcom-common/BoardConfigCommon.mk
 
-# Fonts
-EXTENDED_FONT_FOOTPRINT              := true
-
-# Keylayout
-PRODUCT_COPY_FILES := $(filter-out frameworks/base/data/keyboards/Generic.kl:system/usr/keylayout/Generic.kl , $(PRODUCT_COPY_FILES))
-
-# SELinux
-include device/qcom/sepolicy/sepolicy.mk
-
-BOARD_SEPOLICY_DIRS += \
-   device/samsung/j7ltespr/sepolicy
-
-# Vendor Init
-TARGET_UNIFIED_DEVICE                := true
-TARGET_INIT_VENDOR_LIB               := libinit_j7ltespr
-TARGET_RECOVERY_DEVICE_MODULES       := libinit_j7ltespr
-
-# inherit from the proprietary version
--include vendor/samsung/j7ltespr/AndroidBoardVendor.mk
+# Inherit from proprietary vendor
+-include vendor/samsung/j7ltespr/BoardConfigVendor.mk

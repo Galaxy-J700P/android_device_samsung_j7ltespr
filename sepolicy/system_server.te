@@ -12,5 +12,7 @@ allow system_server wifi_efs_file:file r_file_perms;
 allow system_server app_data_file:file rename;
 allow system_server mpctl_data_file:dir search;
 allow system_server mpctl_data_file:sock_file write;
+allow system_server persist_file:file { write };
+allow system_server dex2oat_exec:file { read open getattr };
 allow system_server unlabeled:file unlink;
 r_dir_file(system_server, persist_file) 

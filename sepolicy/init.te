@@ -16,3 +16,4 @@ allow init sgdisk_exec:file getattr;
 allow init userinit_exec:file getattr;
 allow init blkid_exec:file getattr;
 allow init sdcardd_exec:file getattr;
+allow init fm_radio_device:chr_file { write };

@@ -7,6 +7,10 @@ allow mediaserver system_server:unix_stream_socket { read write };
 allow mediaserver audio_device:chr_file { ioctl open read write };
 allow mediaserver system_prop:property_service set;
 allow mediacodec rootfs:lnk_file r_file_perms;
+r_dir_file(mediacodec, firmware_file)
+allow mediacodec mpctl_socket:dir { search };
 allow mediaserver tee_device:chr_file rw_file_perms;
 allow mediadrmserver rootfs:lnk_file r_file_perms;
+allow mediadrmserver firmware_file:dir search;
+allow mediadrmserver firmware_file:file { getattr open read };
 allow mediaserver media_rw_data_file:file write;

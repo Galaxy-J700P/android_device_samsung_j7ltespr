@@ -13,3 +13,6 @@ allow qti_init_shell qmuxd:unix_stream_socket { connectto };
 allow qti_init_shell bluetooth_efs_file:file { open read getattr };
 allow qti_init_shell bluetooth_efs_file:dir { search };
 allow qti_init_shell efs_file:dir { search };
+allow qti_init_shell kmsg_device:chr_file { write open };
+allow qti_init_shell sysfs_devices_system_cpu:file { setattr };
+allow qti_init_shell debugfs_tracing:file { write open };

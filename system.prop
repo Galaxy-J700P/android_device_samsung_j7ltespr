@@ -19,6 +19,11 @@ ro.ril.telephony.mqanelements=6
 ro.telephony.ril.config=simactivation
 persist.radio.tdscdma_present=1
 ro.telephony.default_network=10
+telephony.lteOnCdmaDevice=1
+ro.cdma.default_numeric=310000
+ro.cdma.default_alpha=Chameleon
+ro.telephony.get_imsi_from_sim=true
+ro.ril.svdo=true
 
 # Data modules
 ro.use_data_netmgrd=false

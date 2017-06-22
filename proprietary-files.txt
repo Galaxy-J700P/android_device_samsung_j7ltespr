@@ -70,8 +70,6 @@ lib/libarcsoft_wideselfie.so
 lib/libatomcore.so
 lib/libatomjpeg.so
 lib/libatparser.so
-lib/libaudio-ril.so
-lib/libaudiosa.so
 lib/libawb_algo_front_al.so
 lib/libawb_algo_rear_al.so
 lib/libbt-aptX-ARM-4.2.2.so
@@ -199,17 +197,17 @@ vendor/lib/libacdbrtac.so
 vendor/lib/libactuator_dw9806_camcorder.so
 vendor/lib/libactuator_dw9806_camera.so
 vendor/lib/libadiertac.so
-vendor/lib/libadreno_utils.so
+vendor/lib/libadreno_utils.so|b74a626858dd1b3411e8199694bd5da8
 vendor/lib/libadsprpc.so
 vendor/lib/libaudcal.so
 vendor/lib/libavenhancements.so
 vendor/lib/libbccQTI.so
 vendor/lib/libbtnv.so
-vendor/lib/libC2D2.so
-vendor/lib/libc2d30-a3xx.so
-vendor/lib/libc2d30-a4xx.so
+vendor/lib/libC2D2.so|9ce02ff41421ec64d26b571c479fe6ca
+vendor/lib/libc2d30-a3xx.so|91c8e82b10afda25a727ffc94dad5bc5
+vendor/lib/libc2d30-a4xx.so|5fb624bd78b3ac8bacd2a9f1226db103
 vendor/lib/libcalmodule_gyroscope.so
-vendor/lib/libCB.so
+vendor/lib/libCB.so|40daed628f19ef2f625ca7fca559d0b7
 vendor/lib/libchromatix_s5k3l2xx_vt_hd.so
 vendor/lib/libchromatix_s5k3l2xx_vt.so
 vendor/lib/libchromatix_s5k5e3yx_wide_common.so
@@ -233,7 +231,7 @@ vendor/lib/libfastcvopt.so
 vendor/lib/libFlacSwDec.so
 vendor/lib/libflp.so
 vendor/lib/libgeofence.so
-vendor/lib/libgsl.so
+vendor/lib/libgsl.so|06a985c79c24b850ec4a03e89bd4e208
 -vendor/lib/libHevcSwDecoder.so
 vendor/lib/libhwdaphal.so
 vendor/lib/libI420colorconvert.so
@@ -254,8 +252,8 @@ vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
 vendor/lib/liblbs_core.so
 vendor/lib/liblistenjni.so
-vendor/lib/libllvm-glnext.so
-vendor/lib/libllvm-qcom.so
+vendor/lib/libllvm-glnext.so|df95f2de1e3468b8caf8ecb6839a6477
+vendor/lib/libllvm-qcom.so|8c40927b9b56047447c42d0a23081ef1
 vendor/lib/libmdmdetect.so
 vendor/lib/libmdsprpc.so
 vendor/lib/libmm-abl-oem.so
@@ -310,7 +308,7 @@ vendor/lib/liboemcrypto.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libOpenCL.so
+vendor/lib/libOpenCL.so|c68ff0a56dc1c98be520b08e7eb6fee1
 vendor/lib/libperipheral_client.so
 vendor/lib/libprdrmdecrypt.so
 vendor/lib/libqcci_legacy.so
@@ -333,7 +331,9 @@ vendor/lib/lib-rcsimssjni.so
 vendor/lib/lib-rcsjni.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/librpmb.so
-vendor/lib/librs_adreno_sha1.so
+vendor/lib/librs_adreno.so|40dbf893c0fd2ad8583d9937e9c92d3f
+vendor/lib/librs_adreno_sha1.so|4f695154805ab290651af850fad24d81
+vendor/lib/libRSDriver_adreno.so|bd572f3fc34e9dd747753f14a73fb133
 vendor/lib/lib-rtpcommon.so
 vendor/lib/lib-rtpcore.so
 vendor/lib/lib-rtpdaemoninterface.so
@@ -374,19 +374,19 @@ vendor/lib/libxml.so
 
 vendor/lib/drm/libdrmprplugin.so
 
-vendor/lib/egl/eglsubAndroid.so
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so
-vendor/lib/egl/libESXEGL_adreno.so
-vendor/lib/egl/libESXGLESv1_CM_adreno.so
-vendor/lib/egl/libESXGLESv2_adreno.so
-vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so
-vendor/lib/egl/libq3dtools_adreno.so
-vendor/lib/egl/libQTapGLES.so
-vendor/lib/egl/libRBEGL_adreno.so
-vendor/lib/egl/libRBGLESv1_CM_adreno.so
-vendor/lib/egl/libRBGLESv2_adreno.so
+vendor/lib/egl/eglsubAndroid.so|21442267a5e128873442ad9d38475e07
+vendor/lib/egl/eglSubDriverAndroid.so|1e34bc15a3bbcc3eb69a9f1fd525cb0b
+vendor/lib/egl/libEGL_adreno.so|cce3189ca361b239d53db58060893eab
+vendor/lib/egl/libESXEGL_adreno.so|ece400a0d1f05d3e5f0fe3f704e6898d
+vendor/lib/egl/libESXGLESv1_CM_adreno.so|6cd4b8adf65f35ae86e33b531da6068d
+vendor/lib/egl/libESXGLESv2_adreno.so|9a89a84193b17680c1c4a66591d76a43
+vendor/lib/egl/libGLESv1_CM_adreno.so|0b3093145eafb04523844940a4a36af9
+vendor/lib/egl/libGLESv2_adreno.so|bd12ff8d2017689040b80206bfac0b9a
+vendor/lib/egl/libq3dtools_adreno.so|493cb66c4ff6723af6577e83803957b3
+vendor/lib/egl/libQTapGLES.so|374f04a7a7c65d7676e781f0552cd1ca
+vendor/lib/egl/libRBEGL_adreno.so|f2fc963450474859aa7c7ccf6fac92b6
+vendor/lib/egl/libRBGLESv1_CM_adreno.so|5719e42981a1acc1df1a8878312bdca5
+vendor/lib/egl/libRBGLESv2_adreno.so|4d831f9d61222398f09eb15d4f4e7395
 
 vendor/lib/hw/flp.default.so
 

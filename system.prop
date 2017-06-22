@@ -31,7 +31,7 @@ persist.data.netmgrd.qos.enable=false
 
 # Display
 ro.sf.lcd_density=267
-ro.opengles.version=196608
+ro.opengles.version=196610
 debug.composition.type=c2d
 debug.sf.gpu_comp_tiling=1
 debug.mdpcomp.idletime=600

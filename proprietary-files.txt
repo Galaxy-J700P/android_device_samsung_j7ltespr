@@ -123,8 +123,6 @@ lib/libomission_avoidance.so
 lib/libOmxVdecHevc.so
 lib/libpalmMobileDetectorFull.so
 lib/libphotoeditorEngine.so
-lib/libprotobuf-cpp-full.so
-lib/libprotobuf-cpp-lite.so
 lib/libQjpeg.so
 lib/libqjpegforphotoeditor.so
 lib/libQmageDecoder.so

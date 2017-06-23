@@ -181,7 +181,6 @@ lib/hw/camera.msm8916.so:lib/hw/camera.vendor.msm8916.so
 lib/hw/sensors.msm8916.so
 
 vendor/bin/perfd
-vendor/bin/sampleauthdaemon
 vendor/bin/thermal-engine
 
 vendor/firmware/libpn548ad_fw.so|88a35cebace27c3a93439972660f034b

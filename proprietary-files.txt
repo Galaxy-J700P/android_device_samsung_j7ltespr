@@ -70,6 +70,7 @@ lib/libarcsoft_wideselfie.so
 lib/libatomcore.so
 lib/libatomjpeg.so
 lib/libatparser.so
+lib/libaudio-ril.so
 lib/libawb_algo_front_al.so
 lib/libawb_algo_rear_al.so
 lib/libbt-aptX-ARM-4.2.2.so

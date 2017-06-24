@@ -16,24 +16,24 @@
  */
 
 #define LOG_TAG "SEC_RIL_SHIM"
+#include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdint.h>
 
 #include <utils/Log.h>
 
-//various funcs we'll need to call, in their mangled form
+// various funcs we'll need to call, in their mangled form
 
-//android::Parcel::writeString16(char16_t const*, unsigned int)
-extern void _ZN7android6Parcel13writeString16EPKDsj(void **str16P,
-        uint16_t const *str, unsigned int len);
+// android::Parcel::writeString16(char16_t const*, unsigned int)
+extern void _ZN7android6Parcel13writeString16EPKDsj(void** str16P, uint16_t const* str,
+                                                    unsigned int len);
 
-//code exports we provide
+// code exports we provide
 
-void _ZN7android6Parcel13writeString16EPKtj(void **str16P,
-        unsigned short const *str, unsigned int len);
+void _ZN7android6Parcel13writeString16EPKtj(void** str16P, unsigned short const* str,
+                                            unsigned int len);
 
-//library on-load and on-unload handlers (to help us set things up and tear them down)
+// library on-load and on-unload handlers (to help us set things up and tear them down)
 void libEvtLoading(void) __attribute__((constructor));
 void libEvtUnloading(void) __attribute__((destructor));
 
@@ -43,9 +43,8 @@ void libEvtUnloading(void) __attribute__((destructor));
  * NOTES:    This function no longer exists in M, instead now one must pass
  *           in a char16_t instead of a short. M So we'll craft the same call here.
  */
-void _ZN7android6Parcel13writeString16EPKtj(void **str16P,
-        unsigned short const *str, unsigned int len)
-{
+void _ZN7android6Parcel13writeString16EPKtj(void** str16P, unsigned short const* str,
+                                            unsigned int len) {
     _ZN7android6Parcel13writeString16EPKDsj(str16P, str, len);
 }
 
@@ -55,8 +54,7 @@ void _ZN7android6Parcel13writeString16EPKtj(void **str16P,
  * NOTES:    This is a good time to log the fact that we were loaded and plan to
  *           do our thing.
  */
-void libEvtLoading(void)
-{
+void libEvtLoading(void) {
     ALOGV("libbinder interposition library loaded");
 }
 
@@ -65,7 +63,6 @@ void libEvtLoading(void)
  * USE:      Handle library unloading
  * NOTES:    This is a good time to free whatever is unfreed and say goodbye
  */
-void libEvtUnloading(void)
-{
+void libEvtUnloading(void) {
     ALOGV("libbinder interposition library unloading. Goodbye...");
 }

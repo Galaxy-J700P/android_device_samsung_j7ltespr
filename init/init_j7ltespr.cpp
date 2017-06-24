@@ -27,24 +27,24 @@
 
 #include <stdlib.h>
 
-#include "vendor_init.h"
-#include "property_service.h"
 #include "log.h"
+#include "property_service.h"
 #include "util.h"
+#include "vendor_init.h"
 
-void vendor_load_properties()
-{
+void vendor_load_properties() {
     std::string platform = property_get("ro.board.platform");
-    if (platform != ANDROID_TARGET)
-        return;
+    if (platform != ANDROID_TARGET) return;
 
     std::string bootloader = property_get("ro.bootloader");
 
-    property_set("ro.build.fingerprint", "samsung/j7ltespr/j7ltespr:6.0.1/MMB29M/J700PVPS1AQD1:user/release-keys");
+    property_set("ro.build.fingerprint",
+                 "samsung/j7ltespr/j7ltespr:6.0.1/MMB29M/J700PVPS1AQD1:user/release-keys");
     property_set("ro.build.description", "j7ltespr-user 6.0.1 MMB29M J700PVPS1AQD1 release-keys");
     property_set("ro.product.model", "SM-J700P");
     property_set("ro.product.device", "j7ltespr");
 
     std::string device = property_get("ro.product.device");
-    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(), device.c_str());
+    INFO("Found bootloader id %s setting build properties for %s device\n", bootloader.c_str(),
+         device.c_str());
 }

@@ -15,17 +15,16 @@
  */
 
 #include <errno.h>
+#include <fcntl.h>
 #include <stdlib.h>
 #include <string.h>
-#include <fcntl.h>
 
 #define LOG_TAG "PowerHAL_MSM8929_Ext"
 #include <utils/Log.h>
 
 #define BIG_MAX_CPU_PATH "/sys/devices/system/cpu/cpu0/core_ctl/max_cpus"
 
-static void sysfs_write(char *path, char *s)
-{
+static void sysfs_write(char* path, char* s) {
     char buf[80];
     int len;
     int fd;
@@ -45,8 +44,7 @@ static void sysfs_write(char *path, char *s)
     close(fd);
 }
 
-void cm_power_set_interactive_ext(int on)
-{
+void cm_power_set_interactive_ext(int on) {
     ALOGD("%sabling big CPU cluster", on ? "En" : "Dis");
     sysfs_write(BIG_MAX_CPU_PATH, on ? "4" : "0");
 }

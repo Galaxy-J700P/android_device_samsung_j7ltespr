@@ -59,9 +59,6 @@ BOARD_CHARGING_MODE_BOOTING_LPM      := /sys/class/power_supply/battery/batt_lp_
 BACKLIGHT_PATH                       := "/sys/class/leds/lcd-backlight/brightness"
 CHARGING_ENABLED_PATH                := /sys/class/power_supply/battery/batt_lp_charging
 
-# Custom RIL Class
-BOARD_RIL_CLASS := ../../../device/samsung/j7ltespr/ril/
-
 # Dex-preopt
 WITH_DEXPREOPT := true
 
@@ -161,6 +158,11 @@ BOARD_RECOVERY_SWIPE                 := true
 BOARD_USE_CUSTOM_RECOVERY_FONT       := \"roboto_23x41.h\"
 BOARD_USES_MMCUTILS                  := true
 TARGET_NOT_USE_GZIP_RECOVERY_RAMDISK := true
+
+# RIL
+BOARD_RIL_CLASS    := ../../../device/samsung/j7ltespr/ril/
+TARGET_RIL_VARIANT := caf
+PROTOBUF_SUPPORTED := true
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk

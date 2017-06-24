@@ -74,10 +74,6 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libqcmediaplayer
 
-# BoringSSL
-PRODUCT_PACKAGES += \
-    libboringssl-compat
-
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
@@ -275,6 +271,10 @@ PRODUCT_COPY_FILES += \
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
+# Shims
+PRODUCT_PACKAGES += \
+    libril_shim
 
 # TinyAlsa
 PRODUCT_PACKAGES += \

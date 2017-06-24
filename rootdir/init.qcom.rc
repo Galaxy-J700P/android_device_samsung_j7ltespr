@@ -616,6 +616,11 @@ service qseecomd /system/bin/qseecomd
    user root
    group root
 
+service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
+   class core
+   user root
+   group root
+
 service perfd /system/vendor/bin/perfd
    class main
    user root

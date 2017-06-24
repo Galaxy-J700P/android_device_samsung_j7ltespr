@@ -60,12 +60,19 @@ PRODUCT_PACKAGES += \
     audiod \
     audio.a2dp.default \
     audio.primary.msm8916 \
+    audio.primary.default \
+    audio_policy.msm8916 \
     audio.r_submix.default \
+    audio.tms.default \
     audio.usb.default \
     libaudio-resampler \
+    libaudioroute \
+    libaudioutils \
+    libaudiopolicymanager \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libqcomvoiceprocessing
+    libqcomvoiceprocessing \
+    libqcmediaplayer
 
 # BoringSSL
 PRODUCT_PACKAGES += \
@@ -272,7 +279,9 @@ PRODUCT_PACKAGES += \
     tinyplay \
     tinycap \
     tinymix \
-    tinypcminfo
+    tinypcminfo \
+    libtinyalsa \
+    libtinycompress
 
 # TWRP
 PRODUCT_COPY_FILES += \

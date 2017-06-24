@@ -133,7 +133,6 @@ lib/libquramagifencoder_L.so
 lib/libquramresize.so
 lib/libril.so
 lib/librilutils.so
-lib/librmnetctl.so
 lib/libsAMRNB.so
 lib/libsAMRWB.so
 lib/libsamsungvad.so

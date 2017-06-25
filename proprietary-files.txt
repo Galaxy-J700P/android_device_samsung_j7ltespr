@@ -194,6 +194,7 @@ vendor/lib/libadiertac.so
 vendor/lib/libadreno_utils.so|b74a626858dd1b3411e8199694bd5da8
 vendor/lib/libadsprpc.so
 vendor/lib/libaudcal.so
+vendor/lib/libaudio-alsa.so
 vendor/lib/libavenhancements.so
 vendor/lib/libbccQTI.so
 vendor/lib/libbtnv.so
@@ -245,7 +246,7 @@ vendor/lib/lib-imsxml.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegehw.so
 vendor/lib/liblbs_core.so|be81bdae864452bc38544db8184303c6
-vendor/lib/liblistenjni.so
+vendor/lib/liblistensoundmodel2
 vendor/lib/libllvm-glnext.so|df95f2de1e3468b8caf8ecb6839a6477
 vendor/lib/libllvm-qcom.so|8c40927b9b56047447c42d0a23081ef1
 vendor/lib/libmdmdetect.so

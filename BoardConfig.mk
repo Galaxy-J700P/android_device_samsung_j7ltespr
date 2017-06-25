@@ -136,6 +136,7 @@ BOARD_USES_CYANOGEN_HARDWARE    := true
 
 # Power HAL
 TARGET_POWERHAL_VARIANT              := qcom
+CM_POWERHAL_EXTENSION                := qcom
 TARGET_POWERHAL_SET_INTERACTIVE_EXT  := device/samsung/j7ltespr/power/power_ext.c
 
 # Properties

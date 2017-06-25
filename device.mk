@@ -247,7 +247,7 @@ PRODUCT_COPY_FILES += \
 
 # Power HAL
 PRODUCT_PACKAGES += \
-    power.msm8916
+    power.qcom
 
 # Prima Configs
 PRODUCT_COPY_FILES += \

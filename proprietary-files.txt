@@ -176,6 +176,8 @@ lib/libterrier.so
 lib/libtlc_comm.so
 lib/libTsAf.so
 
+lib/drm/libdrmwvmplugin.so
+
 lib/hw/camera.msm8916.so:lib/hw/camera.vendor.msm8916.so
 lib/hw/sensors.msm8916.so
 
@@ -194,7 +196,7 @@ vendor/lib/libadiertac.so
 vendor/lib/libadreno_utils.so|b74a626858dd1b3411e8199694bd5da8
 vendor/lib/libadsprpc.so
 vendor/lib/libaudcal.so
-vendor/lib/libaudio-alsa.so
+vendor/lib/libaudioalsa.so
 vendor/lib/libavenhancements.so
 vendor/lib/libbccQTI.so
 vendor/lib/libbtnv.so
